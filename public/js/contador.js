@@ -9,14 +9,13 @@ function updateCountdown() {
     const hours = String(Math.floor((totalSeconds % 86400) / 3600)).padStart(2, "0");
     const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
     const seconds = String(totalSeconds % 60).padStart(2, "0");
-    document.getElementById("dias").textContent = "menos de un día";
+
     document.getElementById("contador").textContent = `${hours}:${minutes}:${seconds}`;
   } else {
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    document.getElementById("dias").textContent = days;
     document.getElementById("contador").textContent = days;
   }
 }
 
 updateCountdown();
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown, 1000); // actualiza cada segundo para transición suave
