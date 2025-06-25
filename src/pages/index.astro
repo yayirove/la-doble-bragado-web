@@ -1,107 +1,30 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Doble Bragado</title>
-    <style>
-      body {
-        margin: 0;
-        background-color: black;
-        font-family: sans-serif;
-        color: white;
-      }
-      .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        min-height: 100vh;
-      }
-      .contador {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-      .contador-grande {
-        font-size: 6rem;
-        font-weight: bold;
-      }
-      .fotos {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 4rem;
-        flex-wrap: wrap;
-      }
-      .foto-item {
-        text-align: center;
-        transition: transform 0.3s ease;
-      }
-      .foto-item:hover {
-        transform: scale(1.03);
-      }
-      .foto-item img {
-        max-width: 250px;
-        height: auto;
-        border-radius: 6px;
-      }
-      .info {
-        margin-top: 0.5rem;
-        line-height: 1.4;
-      }
-    </style>
-  </head>
-  <body>
-<section class="hero">
-  <div class="contador">
-    <div>Faltan <span id="dias"></span> días para la 3era edición de la Doble Bragado Femenina</div>
-    <div class="contador-grande" id="contador">00</div>
-  </div>
-  <div class="fotos">
-    <div class="foto-item">
-      <img src="/assets/ganadores/maribel-aguirre-2024.jpg" alt="Maribel Aguirre" />
-      <div class="info">
-        Maribel Aguirre<br />
-        Team Rower<br />
-        San Juan
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Inicio | La Doble Bragado">
+  <section class="hero">
+    <div class="contador">
+      <div>Faltan <span id="dias"></span> días para la 3era edición de la Doble Bragado Femenina</div>
+      <div class="contador-grande" id="contador">00</div>
+    </div>
+    <div class="fotos">
+      <div class="foto-item">
+        <img src="/assets/ganadores/maribel-aguirre-2024.jpg" alt="Maribel Aguirre" />
+        <div class="info">
+          Maribel Aguirre<br />
+          Team Rower<br />
+          San Juan
+        </div>
+      </div>
+      <div class="foto-item">
+        <img src="/assets/ganadores/nicolas-traico-2025.jpg" alt="Nicolás Traico" />
+        <div class="info">
+          Nicolás Traico<br />
+          GB Bicicletas<br />
+          Río Negro
+        </div>
       </div>
     </div>
-    <div class="foto-item">
-      <img src="/assets/ganadores/nicolas-traico-2025.jpg" alt="Nicolás Traico" />
-      <div class="info">
-        Nicolás Traico<br />
-        GB Bicicletas<br />
-        Río Negro
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <script>
-      function updateCountdown() {
-        const target = new Date("2025-11-20T00:00:00");
-        const now = new Date();
-        const diff = target - now;
-
-        const totalSeconds = Math.floor(diff / 1000);
-
-        if (totalSeconds <= 86400) {
-          const hours = String(Math.floor((totalSeconds % 86400) / 3600)).padStart(2, "0");
-          const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
-          const seconds = String(totalSeconds % 60).padStart(2, "0");
-          document.getElementById("dias").textContent = "menos de un día";
-          document.getElementById("contador").textContent = `${hours}:${minutes}:${seconds}`;
-        } else {
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          document.getElementById("dias").textContent = days;
-          document.getElementById("contador").textContent = days;
-        }
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    </script>
-  </body>
-</html>
+  </section>
+</Layout>

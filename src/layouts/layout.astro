@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+const { title = "La Doble Bragado", children } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/historia">Historia</a></li>
+        <li><a href="/etapas">Etapas</a></li>
+        <li><a href="/equipos">Equipos</a></li>
+        <li><a href="/colaboracion">Colaboración</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      {children}
+    </main>
+
+    <script src="/js/contador.js" defer></script>
+  </body>
+</html>
