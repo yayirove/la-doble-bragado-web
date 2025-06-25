@@ -1,32 +1,81 @@
 ---
-import Layout from "../layouts/layout.astro";
+// src/pages/index.astro
+import Layout from '../layouts/layout.astro';
+import '../styles/global.css';
 ---
 
-<Layout title="Inicio | La Doble Bragado">
-<section class="hero">
-  <div class="contador">
-    <div>Faltan <span id="dias"></span> días para la 3era edición de la Doble Bragado Femenina</div>
-    <div class="contador-grande" id="contador">00</div>
-  </div>
-
-  <div class="fotos">
-    <div class="foto-item">
-      <img src="/assets/ganadores/maribel-aguirre-2024.jpg" alt="Maribel Aguirre" />
-      <div class="info">
-        Maribel Aguirre<br />
-        Team Rower<br />
-        San Juan
-      </div>
+<Layout>
+  <!-- Sección principal con contador y ganadores -->
+  <section class="hero">
+    <div class="contador">
+      <h2>Faltan</h2>
+      <div id="contador" class="contador-numero">00</div>
+      <p>días para La Doble Bragado Femenina</p>
     </div>
-    <div class="foto-item">
-      <img src="/assets/ganadores/nicolas-traico-2025.jpg" alt="Nicolás Traico" />
-      <div class="info">
-        Nicolás Traico<br />
-        GB Bicicletas<br />
-        Río Negro
-      </div>
-    </div>
-  </div>
-</section>
 
+    <div class="ganadores">
+      <h3>Actuales ganadores</h3>
+      <ul class="lista-ganadores">
+        <li>
+          <img src="/assets/ganadores/nicolas-traico-2025.jpg" alt="Nicolás Traico" />
+          <p><strong>Nicolás Traico</strong><br /><small>GB Bicicletas – Río Negro</small></p>
+        </li>
+        <li>
+          <img src="/assets/ganadores/maribel-aguirre-2024.jpg" alt="Maribel Aguirre" />
+          <p><strong>Maribel Aguirre</strong><br /><small>Rower – San Juan</small></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Sección de noticias -->
+  <section class="noticias">
+    <h2>Últimas noticias</h2>
+    <div class="noticias-grid">
+      <article class="noticia">Noticia 1</article>
+      <article class="noticia">Noticia 2</article>
+    </div>
+  </section>
+
+  <!-- Sección de recorrido -->
+  <section class="recorrido">
+    <h2>Recorrido</h2>
+    <ul class="etapas">
+      <li class="etapa">Etapa 1</li>
+      <li class="etapa">Etapa 2</li>
+      <li class="etapa">Etapa 3</li>
+      <li class="etapa">Etapa 4</li>
+      <li class="etapa">Etapa 5</li>
+    </ul>
+  </section>
+
+  <!-- Sección de tienda -->
+  <section class="tienda">
+    <h2>Tienda oficial</h2>
+    <div class="productos">
+      <div class="producto"></div>
+      <div class="producto"></div>
+      <div class="producto"></div>
+      <div class="producto"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <form class="suscripcion">
+      <label for="email">Suscribite:</label>
+      <input type="email" id="email" placeholder="Tu email" />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="redes">
+      <span>Seguinos:</span>
+      <a href="#" aria-label="YouTube">YT</a>
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="X">X</a>
+    </div>
+  </footer>
+
+  <!-- Script del contador -->
+  <script src="/assets/js/contador.js" defer></script>
 </Layout>
