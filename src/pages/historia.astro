@@ -1,64 +1,25 @@
 ---
-import "../styles/global.css";
+import Layout from "../layouts/layout.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Historia - La Doble Bragado</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      body {
-        margin: 0;
-        padding: 2rem;
-        font-family: sans-serif;
-        background: #111;
-        color: #fff;
-        line-height: 1.6;
-      }
-      h1 {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-      }
-      .contenido {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      .fotos {
-        margin-top: 2rem;
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .fotos img {
-        width: 250px;
-        border-radius: 8px;
-        object-fit: cover;
-      }
-    </style>
-  </head>
-  <body>
+<Layout title="Historia | La Doble Bragado">
+  <section class="contenido">
     <h1>Historia</h1>
-    <div class="contenido">
-      <p>
-        La Doble Bragado es una de las competencias más antiguas y emblemáticas del ciclismo argentino.
-        Desde sus primeras ediciones, ha reunido a los mejores ciclistas del país y se ha convertido en un
-        símbolo del esfuerzo, la tradición y la pasión por este deporte. A lo largo de sus ediciones, ha
-        recorrido pueblos y ciudades, llevando consigo la emoción de la competencia y la calidez de sus
-        seguidores.
-      </p>
-      <p>
-        En esta sección vas a encontrar una reseña histórica, acompañada de fotos y recortes de época,
-        que muestran la evolución de la carrera y el espíritu que la mantiene viva hasta hoy.
-      </p>
+    <p>
+      La Doble Bragado es una de las competencias más antiguas y emblemáticas del ciclismo argentino.
+      Desde sus primeras ediciones, ha reunido a los mejores ciclistas del país y se ha convertido en un
+      símbolo del esfuerzo, la tradición y la pasión por este deporte. A lo largo de sus ediciones, ha
+      recorrido pueblos y ciudades, llevando consigo la emoción de la competencia y la calidez de sus
+      seguidores.
+    </p>
+    <p>
+      En esta sección vas a encontrar una reseña histórica, acompañada de fotos y recortes de época,
+      que muestran la evolución de la carrera y el espíritu que la mantiene viva hasta hoy.
+    </p>
 
-      <div class="fotos">
-        <img src="/assets/archivo/humberto-varisco.jpg" alt="Humberto Varisco en La Doble Bragado" />
-        <img src="/assets/archivo/oscar-giacce.jpg" alt="Oscar Giaccé en La Doble Bragado" />
-      </div>
-
+    <div class="fotos">
+      <img src="/assets/archivo/humberto-varisco.jpg" alt="Humberto Varisco en La Doble Bragado" />
+      <img src="/assets/archivo/oscar-giacce.jpg" alt="Oscar Giaccé en La Doble Bragado" />
     </div>
-  </body>
-</html>
+  </section>
+</Layout>

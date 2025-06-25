@@ -82,3 +82,22 @@ h1 {
   margin-top: 0.5rem;
   line-height: 1.4;
 }
+
+.contenido {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.fotos {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fotos img {
+  width: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+}
