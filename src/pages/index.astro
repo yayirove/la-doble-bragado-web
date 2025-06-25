@@ -3,28 +3,30 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="Inicio | La Doble Bragado">
-  <section class="hero">
-    <div class="contador">
-      <div>Faltan <span id="dias"></span> días para la 3era edición de la Doble Bragado Femenina</div>
-      <div class="contador-grande" id="contador">00</div>
-    </div>
-    <div class="fotos">
-      <div class="foto-item">
-        <img src="/assets/ganadores/maribel-aguirre-2024.jpg" alt="Maribel Aguirre" />
-        <div class="info">
-          Maribel Aguirre<br />
-          Team Rower<br />
-          San Juan
-        </div>
-      </div>
-      <div class="foto-item">
-        <img src="/assets/ganadores/nicolas-traico-2025.jpg" alt="Nicolás Traico" />
-        <div class="info">
-          Nicolás Traico<br />
-          GB Bicicletas<br />
-          Río Negro
-        </div>
+<section class="hero">
+  <div class="contador">
+    <div>Faltan <span id="dias"></span> días para la 3era edición de la Doble Bragado Femenina</div>
+    <div class="contador-grande" id="contador">00</div>
+  </div>
+
+  <div class="fotos">
+    <div class="foto-item">
+      <img src="/assets/ganadores/maribel-aguirre-2024.jpg" alt="Maribel Aguirre" />
+      <div class="info">
+        Maribel Aguirre<br />
+        Team Rower<br />
+        San Juan
       </div>
     </div>
-  </section>
+    <div class="foto-item">
+      <img src="/assets/ganadores/nicolas-traico-2025.jpg" alt="Nicolás Traico" />
+      <div class="info">
+        Nicolás Traico<br />
+        GB Bicicletas<br />
+        Río Negro
+      </div>
+    </div>
+  </div>
+</section>
+
 </Layout>
