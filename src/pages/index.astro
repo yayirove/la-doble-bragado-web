@@ -5,85 +5,18 @@ import '../styles/global.css';
 ---
 
 <Layout>
-  <!-- Sección principal con contador y ganadores -->
-  <section class="hero">
-    <div class="hero-overlay">
-      <div class="bloque-izquierdo">
-        <h3>Actuales ganadores</h3>
-        <ul class="lista-ganadores">
-          <li>
-            <img src="/assets/ganadores/nicolas-traico-2025.jpg" alt="Nicolás Traico" />
-            <p><strong>Nicolás Traico</strong><br /><small>GB Bicicletas – Río Negro</small></p>
-          </li>
-          <li>
-            <img src="/assets/ganadores/maribel-aguirre-2024.jpg" alt="Maribel Aguirre" />
-            <p><strong>Maribel Aguirre</strong><br /><small>Rower – San Juan</small></p>
-          </li>
-        </ul>
+  <nav class="minimal-nav">
+    <a href="/">Inicio</a>
+    <a href="/acerca">Acerca de</a>
+    <a href="/sponsors">Sponsors</a>
+  </nav>
 
-        <div class="noticias-hero">
-          <article class="noticia">Noticia 1</article>
-          <article class="noticia">Noticia 2</article>
-        </div>
-      </div>
-
-      <div class="bloque-derecho contador">
-        <p class="contador-texto-arriba">Faltan</p>
-        <div id="contador" class="contador-numero">00</div>
-        <p class="contador-texto-abajo">para la 3era edición Femenina</p>
-      </div>
+  <section class="hero-min">
+    <h1>La Doble Bragado</h1>
+    <p>Bienvenidos al sitio oficial</p>
+    <div class="hero-links">
+      <a class="btn" href="/acerca">Acerca de</a>
+      <a class="btn" href="/sponsors">Media Kit</a>
     </div>
   </section>
-
-
-  <!-- Sección de noticias -->
-  <section class="noticias">
-    <h2>Últimas noticias</h2>
-    <div class="noticias-grid">
-      <article class="noticia">Noticia 1</article>
-      <article class="noticia">Noticia 2</article>
-    </div>
-  </section>
-
-  <!-- Sección de recorrido -->
-  <section class="recorrido">
-    <h2>Recorrido</h2>
-    <ul class="etapas">
-      <li class="etapa">Etapa 1</li>
-      <li class="etapa">Etapa 2</li>
-      <li class="etapa">Etapa 3</li>
-      <li class="etapa">Etapa 4</li>
-      <li class="etapa">Etapa 5</li>
-    </ul>
-  </section>
-
-  <!-- Sección de tienda -->
-  <section class="tienda">
-    <h2>Tienda oficial</h2>
-    <div class="productos">
-      <div class="producto"></div>
-      <div class="producto"></div>
-      <div class="producto"></div>
-      <div class="producto"></div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <form class="suscripcion">
-      <label for="email">Suscribite:</label>
-      <input type="email" id="email" placeholder="Tu email" />
-      <button type="submit">Enviar</button>
-    </form>
-
-    <div class="redes">
-      <span>Seguinos:</span>
-      <a href="#" aria-label="YouTube">YT</a>
-      <a href="#" aria-label="Instagram">IG</a>
-      <a href="#" aria-label="X">X</a>
-    </div>
-  </footer>
-
-  <!-- Script del contador -->
-  <script src="/assets/js/contador.js" defer></script>
 </Layout>
