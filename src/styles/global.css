@@ -404,7 +404,7 @@ section:not(.hero) {
 .hero-nueva {
   position: relative;
   height: 100vh;
-  background-image: url('/hero-nuevo-2.jpg');
+  background-image: url('/assets/hero-nuevo-2.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
