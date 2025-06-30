@@ -1,397 +1,9 @@
-/* === Estilos globales === */
-body {
-  margin: 0;
-  padding: 2rem;
-  font-family: sans-serif;
-  background: #111;
-  color: #fff;
-  line-height: 1.6;
-}
-
-h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-/* Navbar */
-.navbar {
-  background: #222;
-  padding: 1rem;
-  text-align: center;
-}
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: inline-flex;
-  gap: 2rem;
-}
-.navbar li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-.navbar li a:hover {
-  text-decoration: underline;
-}
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 1rem;
-  gap: 3rem;
-  text-align: center;
-}
-
-.contador {
-  font-size: 1.5rem;
-}
-
-.contador-grande {
-  font-size: 6rem;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-
-.fotos {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.foto-item {
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.foto-item:hover {
-  transform: scale(1.05);
-}
-
-.foto-item img {
-  max-width: 250px;
-  height: auto;
-  border-radius: 6px;
-}
-
-.info {
-  margin-top: 0.5rem;
-  line-height: 1.4;
-}
-
-.contenido {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.fotos {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.fotos img {
-  width: 250px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
-  scroll-behavior: smooth;
-}
-
-body {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* Layout general */
-section {
-  margin-bottom: 3rem;
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid #0072ce;
-  padding-left: 0.5rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-
-.contador {
-  background: #0072ce;
-  color: white;
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-  flex: 1;
-}
-
-.contador-numero {
-  font-size: 3rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
-}
-
-.ganadores {
-  flex: 1;
-}
-
-.lista-ganadores {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.lista-ganadores li {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.lista-ganadores img {
-  width: 80px;
-  height: auto;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-/* Noticias */
-.noticias-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.noticia {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-/* Recorrido */
-.etapas {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-}
-
-.etapa {
-  background: #0072ce;
-  color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* Tienda */
-.productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 1rem;
-}
-
-.producto {
-  background: #eee;
-  height: 140px;
-  border-radius: 8px;
-}
-
-/* Footer */
-.footer {
-  border-top: 1px solid #ccc;
-  padding-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-start;
-}
-
-.suscripcion {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.suscripcion input {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.suscripcion button {
-  background: #0072ce;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.redes {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-.redes a {
-  background: #0072ce;
-  color: white;
-  padding: 0.4rem 0.6rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .hero-overlay {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  .hero-overlay .contador,
-  .hero-overlay .ganadores {
-    width: 100%;
-  }
-
-  .contador-numero {
-    font-size: 2.5rem;
-  }
-}
-.hero-overlay {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  padding: 2rem;
-  backdrop-filter: brightness(0.9);
-  gap: 2rem;
-}
-
-.bloque-izquierdo {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  flex: 2;
-}
-
-.bloque-derecho.contador {
-  background: rgba(0, 114, 206, 0.9);
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  flex: 1;
-}
-
-.contador-texto-arriba {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.contador-numero {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.contador-texto-abajo {
-  font-size: 1rem;
-}
-
-.noticias-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.noticia {
-  background: rgba(255, 255, 255, 0.9);
-  color: #000;
-  padding: 1rem;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-section:not(.hero) {
-  background-color: #f2f2f2;
-  padding: 2rem;
-}
-@media (max-width: 768px) {
-  .hero-overlay {
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 1.5rem;
-    text-align: center;
-  }
-
-  .bloque-derecho.contador {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .bloque-izquierdo {
-    width: 100%;
-    align-items: center;
-  }
-
-  .lista-ganadores {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .lista-ganadores li {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .lista-ganadores img {
-    width: 100px;
-  }
-
-  .noticias-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .contador-numero {
-    font-size: 3rem;
-  }
-}
-
 /* === HERO NUEVA V5 MINI (SECCIÓN INICIO) === */
 
 .hero-nueva {
   position: relative;
-  height: 100vh;
-  background-image: url('/assets/hero-nuevo-2.jpg');
+  aspect-ratio: 16 / 9;
+  background-image: url('/assets/hero-nuevo-3.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -399,7 +11,9 @@ section:not(.hero) {
   justify-content: center;
   text-align: center;
   color: white;
+  max-width: 100%;
 }
+
 
 .hero-nueva .overlay {
   background-color: rgba(0, 0, 0, 0.5);
@@ -425,14 +39,14 @@ section:not(.hero) {
 
 .hero-content p {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 7rem;
   font-family: "acumin-pro", sans-serif;
 }
 
 .cta-button {
   background: #fcee09;
   color: black;
-  padding: 0.8rem 1.6rem;
+  padding: .8rem 1.6rem;
   border: none;
   font-weight: bold;
   text-decoration: none;
@@ -444,6 +58,7 @@ section:not(.hero) {
 .cta-button:hover {
   background: #ffe600;
 }
+
 
 /* === SECCIÓN ACERCA DE === */
 
@@ -495,6 +110,7 @@ section:not(.hero) {
   margin-top: 0.5rem;
   font-family: "acumin-pro", sans-serif;
 }
+
 
 /* === SECCIÓN POR QUÉ ROMPER EL STATUS QUO === */
 
@@ -548,6 +164,7 @@ section:not(.hero) {
   color: #444;
 }
 
+
 /* === SECCIÓN SPONSORS / LOGOS === */
 
 .sponsors {
@@ -581,6 +198,7 @@ section:not(.hero) {
   transform: scale(1.05);
   opacity: 1;
 }
+
 
 /* === SECCIÓN CONTACTO / CTA FINAL === */
 
@@ -633,4 +251,229 @@ section:not(.hero) {
 
 .cta-pdf:hover {
   background: #fcee09;
+}
+
+/* === EFECTO VISUAL PARA LOGOS DE SPONSORS === */
+
+.sponsors-logos img {
+  height: 60px;
+  object-fit: contain;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+.sponsors-logos img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* === FOOTER === */
+
+.footer {
+  background: #f2f2f2;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: "acumin-pro", sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  border-top: 1px solid #ccc;
+}
+
+.footer .redes {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer .redes a img {
+  height: 28px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+
+.footer .redes a:hover img {
+  opacity: 1;
+}
+
+/* === HEADER: LOGO Y CONTADOR HERO === */
+
+.header-logo {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.header-logo img {
+  height: 200px;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: height 0.3s ease;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .header-logo {
+    top: 30px;
+  }
+
+  .header-logo img {
+    height: 120px;
+  }
+}
+
+
+.contador-hero {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  text-align: right;
+}
+
+.contador-box {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  color: #fcee09;
+  font-family: 'Share Tech Mono', monospace;
+  text-align: center;
+}
+
+.contador-label {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.contador-numero {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.contador-texto-abajo {
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.contador-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contador-labels {
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  font-family: 'Share Tech Mono', monospace;
+  color: #fcee09;
+  text-shadow: 0 0 3px #fcee09;
+}
+
+/* === FUENTE DIGITAL CONTADOR === */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+.contador-numero {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 2.8rem;
+  color: #fcee09;
+  text-shadow: 0 0 6px #fcee09;
+  letter-spacing: 2px;
+}
+
+/* === SECCIÓN CONTADOR FINAL === */
+
+
+/* === FLIP CLOCK STYLING CON ANIMACIÓN === */
+
+.seccion-contador {
+  position: relative;
+  background-image: url('/assets/contador/Doble-Bragado-Fem-Etapa-reina-16-9-v4.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: 'Share Tech Mono', monospace;
+  color: #fcee09;
+  z-index: 1;
+}
+
+.seccion-contador::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* overlay oscuro */
+  z-index: -1;
+}
+
+
+.flip-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.flip-block {
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 80px;
+  height: 100px;
+  background: linear-gradient(to bottom, #682c7d, #3d154a); /* antes era #222 y #111 */
+  border-radius: 8px;
+  box-shadow: inset 0 -1px 0 #000, 0 3px 8px rgba(0,0,0,0.5);
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-inner.flipping {
+  animation: flip 0.6s ease forwards;
+}
+
+@keyframes flip {
+  0% { transform: rotateX(0); }
+  50% { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0); }
+}
+
+.flip-number {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #fcee09; /* amarillo intenso */
+  text-shadow: 
+    0 0 3px #a949c7,  /* contorno violeta medio */
+    0 0 6px #ee69a1;  /* glow rosa */
+  backface-visibility: hidden;
+}
+
+.flip-label {
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+  letter-spacing: 1px;
+  color: #fcee09;
+  text-align: center;
+}
+
+.contador-final {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #ccc;
 }

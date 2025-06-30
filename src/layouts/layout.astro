@@ -8,17 +8,15 @@ const { title = "La Doble Bragado", children } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap">
   </head>
   <body>
-    <nav class="navbar">
-      <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/historia">Historia</a></li>
-        <li><a href="/etapas">Etapas</a></li>
-        <li><a href="/equipos">Equipos</a></li>
-        <li><a href="/colaboracion">Colaboración</a></li>
-      </ul>
-    </nav>
+
+    <!-- Logo centrado arriba -->
+    <div class="header-logo">
+      <img src="/assets/logo-redux-x1.png" alt="La Doble Bragado" />
+    </div>
+    
 
     <main>
       <slot />

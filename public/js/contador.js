@@ -1,21 +1,48 @@
-function updateCountdown() {
-  const target = new Date("2025-11-20T00:00:00");
-  const now = new Date();
-  const diff = target - now;
+const fechaObjetivo = new Date("2025-11-20T00:00:00Z");
 
-  const totalSeconds = Math.floor(diff / 1000);
+function actualizarFlip(id, valor) {
+  const contenedor = document.getElementById(id);
+  const nuevo = valor < 10 ? "0" + valor : valor.toString();
+  const actual = contenedor.querySelector(".flip-number").textContent;
 
-  if (totalSeconds <= 86400) {
-    const hours = String(Math.floor((totalSeconds % 86400) / 3600)).padStart(2, "0");
-    const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
-    const seconds = String(totalSeconds % 60).padStart(2, "0");
+  // Actualizar sin animación para segundos
+  if (id === "segundos") {
+    contenedor.querySelector(".flip-number").textContent = nuevo;
+    return;
+  }
 
-    document.getElementById("contador").textContent = `${hours}:${minutes}:${seconds}`;
-  } else {
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    document.getElementById("contador").textContent = days;
+  if (actual !== nuevo) {
+    contenedor.classList.add("flipping");
+    setTimeout(() => {
+      contenedor.querySelector(".flip-number").textContent = nuevo;
+      contenedor.classList.remove("flipping");
+    }, 300);
   }
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000); // actualiza cada segundo para transición suave
+function actualizarContador() {
+  const ahora = new Date();
+  const diferencia = fechaObjetivo - ahora;
+
+  if (diferencia <= 0) {
+    ['dias', 'horas', 'minutos', 'segundos'].forEach(id => {
+      const contenedor = document.getElementById(id);
+      contenedor.querySelector(".flip-number").textContent = "00";
+      contenedor.classList.remove("flipping");
+    });
+    return;
+  }
+
+  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+  const segundos = Math.floor((diferencia / 1000) % 60);
+
+  actualizarFlip("dias", dias);
+  actualizarFlip("horas", horas);
+  actualizarFlip("minutos", minutos);
+  actualizarFlip("segundos", segundos);
+}
+
+actualizarContador();
+setInterval(actualizarContador, 1000);
