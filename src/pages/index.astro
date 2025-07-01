@@ -1,4 +1,4 @@
----
+5---
 // src/pages/index.astro
 import Layout from '../layouts/layout.astro';
 import '../styles/global.css';
@@ -6,14 +6,15 @@ import '../styles/global.css';
 
 <Layout>
   <section id="hero" class="hero-nueva">
-    <div class="overlay">
-      <div class="hero-content">
-        <h1>Unite a nuestro canal de YouTube con tu marca</h1>
-        <p> Juntos romperemos con el status quo </p>
-        <a href="mailto:sponsor@la-doble-bragado.com?subject=Quiero%20sumarme%20a%20La%20Doble%20Bragado" class="cta-button">¿Te gusta la idea?</a>
-      </div>
+  <div class="hero-bg rellax" data-rellax-speed="-3"></div>
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Unite a nuestro canal de YouTube con tu marca</h1>
+      <p>Juntos romperemos con el status quo</p>
+      <a href="#" class="cta-button">¿Te gusta la idea?</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="about" class="acerca">
   <div class="acerca-content">
@@ -75,7 +76,7 @@ import '../styles/global.css';
 </section>
 
 <section class="seccion-contador">
-  <h2>Faltan</h2>
+  <h2 class="gravesend">FALTAN</h2>
   <div class="flip-container">
     <div class="flip-block">
       <div class="flip-inner" id="dias"><div class="flip-number">00</div></div>
@@ -94,7 +95,7 @@ import '../styles/global.css';
       <div class="flip-label">SEGUNDOS</div>
     </div>
   </div>
-  <p class="contador-final">para la 3era edición Femenina de La Doble Bragado</p>
+  <p class="contador-final acumind pro">para la 3era edición femenina de la Doble Bragado</p>
 </section>
 
 <section id="contacto" class="contacto">

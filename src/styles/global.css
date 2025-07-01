@@ -1,17 +1,27 @@
+/* === DEFINIR FUENTE === */
+html, body {
+  font-family: "gravesend-sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
 /* === HERO NUEVA V5 MINI (SECCIÓN INICIO) === */
 
 .hero-nueva {
   position: relative;
-  aspect-ratio: 16 / 9;
+  height: 100vh;
   background-image: url('/assets/hero-nuevo-3.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  transition: background-position 0.2s ease-out;
 }
 
 
@@ -33,14 +43,12 @@
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  font-family: "acumin-pro", sans-serif;
   font-weight: 800;
 }
 
 .hero-content p {
   font-size: 1.5rem;
   margin-bottom: 7rem;
-  font-family: "acumin-pro", sans-serif;
 }
 
 .cta-button {
@@ -50,7 +58,6 @@
   border: none;
   font-weight: bold;
   text-decoration: none;
-  font-family: "acumin-pro", sans-serif;
   transition: background 0.3s ease;
   border-radius: 6px;
 }
@@ -72,14 +79,14 @@
 .acerca h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-family: "acumin-pro", sans-serif;
 }
 
 .acerca p {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 2rem;
-  font-family: "acumin-pro", sans-serif;
+  font-family: "gravesend-sans", sans-serif;
+  font-weight: 500;
 }
 
 .acerca-metricas {
@@ -108,7 +115,6 @@
 .acerca-box span {
   display: block;
   margin-top: 0.5rem;
-  font-family: "acumin-pro", sans-serif;
 }
 
 
@@ -124,7 +130,6 @@
 .porque h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  font-family: "acumin-pro", sans-serif;
 }
 
 .porque-grid {
@@ -155,13 +160,13 @@
 .porque-item h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  font-family: "acumin-pro", sans-serif;
 }
 
 .porque-item p {
   font-size: 1rem;
-  font-family: "acumin-pro", sans-serif;
+  font-family: "gravesend-sans", sans-serif;
   color: #444;
+  font-weight: 500;
 }
 
 
@@ -176,7 +181,6 @@
 .sponsors h2 {
   font-size: 1.8rem;
   margin-bottom: 2rem;
-  font-family: "acumin-pro", sans-serif;
 }
 
 .sponsors-logos {
@@ -212,13 +216,13 @@
 .contacto h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-family: "acumin-pro", sans-serif;
 }
 
 .contacto p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  font-family: "acumin-pro", sans-serif;
+  font-family: "gravesend-sans", sans-serif;
+  font-weight: 500;
 }
 
 .cta-links {
@@ -236,7 +240,6 @@
   text-decoration: none;
   padding: 0.8rem 1.6rem;
   border-radius: 6px;
-  font-family: "acumin-pro", sans-serif;
   transition: background 0.3s ease;
 }
 
@@ -275,7 +278,6 @@
   background: #f2f2f2;
   padding: 2rem 1rem;
   text-align: center;
-  font-family: "acumin-pro", sans-serif;
   font-size: 0.95rem;
   color: #555;
   border-top: 1px solid #ccc;
@@ -304,7 +306,7 @@
 
 .header-logo {
   position: absolute;
-  top: 60px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -317,6 +319,10 @@
   transition: height 0.3s ease;
 }
 
+body {
+  position: relative;
+}
+
 /* Responsive para móviles */
 @media (max-width: 768px) {
   .header-logo {
@@ -327,7 +333,6 @@
     height: 120px;
   }
 }
-
 
 .contador-hero {
   position: absolute;
@@ -394,6 +399,14 @@
 
 /* === SECCIÓN CONTADOR FINAL === */
 
+.seccion-contador h2 {
+  font-family: "gravesend-sans", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 10px;
+  color: #fcee09;
+  margin-bottom: 1rem;
+}
 
 /* === FLIP CLOCK STYLING CON ANIMACIÓN === */
 
@@ -468,12 +481,132 @@
   font-size: 0.75rem;
   margin-top: 0.4rem;
   letter-spacing: 1px;
-  color: #fcee09;
+  color: #fff;
   text-align: center;
 }
 
 .contador-final {
-  margin-top: 2rem;
+  font-family: "gravesend-sans", sans-serif;
+  font-weight: 600;
   font-size: 1rem;
-  color: #ccc;
+  color: #fcee09;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+.hero-nueva {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1px;
+  transform-style: preserve-3d;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+  background-image: url('/assets/hero-nuevo-3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background: #fcee09;
+  color: black;
+  padding: .8rem 1.6rem;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  border-radius: 6px;
+}
+
+.cta-button:hover {
+  background: #ffe600;
+}
+/* === TIPOGRAFÍA PRINCIPAL: Gravesend Sans === */
+
+.font-light {
+  font-weight: 300;
+  font-style: normal;
+}
+
+.font-medium {
+  font-weight: 500;
+  font-style: normal;
+}
+
+.font-bold {
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Opcionales según uso frecuente */
+.titulo-seccion {
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.texto-parrafo {
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+..gravesend-bold {
+  font-family: "gravesend-sans", sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }

@@ -9,6 +9,7 @@ const { title = "La Doble Bragado", children } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap">
+    <link rel="stylesheet" href="https://use.typekit.net/dgy8exd.css">
   </head>
   <body>
 
@@ -23,5 +24,13 @@ const { title = "La Doble Bragado", children } = Astro.props;
     </main>
 
     <script src="/js/contador.js" defer></script>
+    <script src="/js/parallax-hero.js" defer></script>
+    <script src="/js/rellax.min.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    new Rellax('.rellax');
+  });
+</script>
+
   </body>
 </html>
