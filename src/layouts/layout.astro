@@ -32,25 +32,6 @@ const { title = "La Doble Bragado", children } = Astro.props;
   });
 </script>
 
-<!-- Modal LDB -->
-<div class="modal-ldb" id="modalLDB">
-  <div class="modal-ldb-content">
-    <span class="modal-ldb-close" id="modalLDBClose">&times;</span>
-    <h2>Contanos qué pensás</h2>
-    <form>
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" required />
-
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="mensaje">Mensaje (opcional)</label>
-      <textarea id="mensaje" name="mensaje"></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-</div>
 
 <!-- Modal Contacto Netlify -->
 <div class="modal-ldb" id="modalContact">
@@ -88,7 +69,7 @@ const { title = "La Doble Bragado", children } = Astro.props;
 </div>
 
 <!-- Script modal -->
-<script src="/js/modal-ldb.js" defer is:inline></script>
+
 <script is:inline defer>
   document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modalContact");
