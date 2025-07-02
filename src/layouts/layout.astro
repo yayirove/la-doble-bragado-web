@@ -38,23 +38,24 @@ const { title = "La Doble Bragado", children } = Astro.props;
   <div class="modal-ldb-content">
     <span class="modal-ldb-close" id="modalContactClose">&times;</span>
     <h2>¿Querés sumarte?</h2>
-    <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contacto" />
-      <p hidden>
-        <label>No llenar este campo: <input name="bot-field" /></label>
-      </p>
+    <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return false;">
+  <input type="hidden" name="form-name" value="contacto" />
+  <p hidden>
+    <label>No llenar este campo: <input name="bot-field" /></label>
+  </p>
 
-      <label for="nombre2">Nombre</label>
-      <input type="text" id="nombre2" name="nombre" required />
+  <label for="nombre2">Nombre</label>
+  <input type="text" id="nombre2" name="nombre" required />
 
-      <label for="email2">Correo electrónico</label>
-      <input type="email" id="email2" name="email" required />
+  <label for="email2">Correo electrónico</label>
+  <input type="email" id="email2" name="email" required />
 
-      <label for="mensaje2">Mensaje (opcional)</label>
-      <textarea id="mensaje2" name="mensaje"></textarea>
+  <label for="mensaje2">Mensaje (opcional)</label>
+  <textarea id="mensaje2" name="mensaje"></textarea>
 
-      <button type="submit">Enviar</button>
-    </form>
+  <button type="submit">Enviar</button>
+</form>
+
   </div>
 </div>
 
@@ -105,24 +106,31 @@ const { title = "La Doble Bragado", children } = Astro.props;
     const btnGracias = document.getElementById("modalGraciasBtn");
 
     if (form) {
-     form.addEventListener("submit", function (e) {
-  e.preventDefault();
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-  const data = new FormData(form);
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(data).toString(),
-  })
-  .then(() => {
-    modalContacto.style.display = "none";
-    modalGracias.style.display = "block";
-  })
-  .catch(() => {
-    alert("Ocurrió un error al enviar el formulario. Por favor intentá nuevamente.");
-  });
-});
+        const data = new FormData(form);
 
+        // Detectamos si estamos en localhost para simular envío
+        if (location.hostname === "localhost") {
+          modalContacto.style.display = "none";
+          modalGracias.style.display = "block";
+          return;
+        }
+
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(data).toString(),
+        })
+        .then(() => {
+          modalContacto.style.display = "none";
+          modalGracias.style.display = "block";
+        })
+        .catch(() => {
+          alert("Ocurrió un error al enviar el formulario. Por favor intentá nuevamente.");
+        });
+      });
     }
 
     closeGracias.addEventListener("click", () => {
@@ -140,6 +148,7 @@ const { title = "La Doble Bragado", children } = Astro.props;
     });
   });
 </script>
+
 
   </body>
 </html>
