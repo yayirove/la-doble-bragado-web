@@ -32,5 +32,129 @@ const { title = "La Doble Bragado", children } = Astro.props;
   });
 </script>
 
+<!-- Modal LDB -->
+<div class="modal-ldb" id="modalLDB">
+  <div class="modal-ldb-content">
+    <span class="modal-ldb-close" id="modalLDBClose">&times;</span>
+    <h2>Contanos qué pensás</h2>
+    <form>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensaje">Mensaje (opcional)</label>
+      <textarea id="mensaje" name="mensaje"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Contacto Netlify -->
+<div class="modal-ldb" id="modalContact">
+  <div class="modal-ldb-content">
+    <span class="modal-ldb-close" id="modalContactClose">&times;</span>
+    <h2>¿Querés sumarte?</h2>
+    <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contacto" />
+      <p hidden>
+        <label>No llenar este campo: <input name="bot-field" /></label>
+      </p>
+
+      <label for="nombre2">Nombre</label>
+      <input type="text" id="nombre2" name="nombre" required />
+
+      <label for="email2">Correo electrónico</label>
+      <input type="email" id="email2" name="email" required />
+
+      <label for="mensaje2">Mensaje (opcional)</label>
+      <textarea id="mensaje2" name="mensaje"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Mensaje de éxito -->
+<div class="modal-ldb" id="modalGracias">
+  <div class="modal-ldb-content">
+    <span class="modal-ldb-close" id="modalGraciasClose">&times;</span>
+    <h2>¡Gracias por escribirnos!</h2>
+    <p>Pronto nos pondremos en contacto con vos.</p>
+    <button id="modalGraciasBtn">Cerrar</button>
+  </div>
+</div>
+
+<!-- Script modal -->
+<script src="/js/modal-ldb.js" defer is:inline></script>
+<script is:inline defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("modalContact");
+    const closeBtn = document.getElementById("modalContactClose");
+    const openBtn = document.querySelector('[data-modal="contact"]');
+
+    if (openBtn) {
+      openBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        modal.style.display = "block";
+      });
+    }
+
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+</script>
+
+<script is:inline defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector('form[name="contacto"]');
+    const modalContacto = document.getElementById("modalContact");
+    const modalGracias = document.getElementById("modalGracias");
+    const closeGracias = document.getElementById("modalGraciasClose");
+    const btnGracias = document.getElementById("modalGraciasBtn");
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Simula envío exitoso para efecto visual inmediato
+        modalContacto.style.display = "none";
+        modalGracias.style.display = "block";
+
+        // Enviamos el formulario con Netlify
+        const data = new FormData(form);
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(data).toString(),
+        });
+      });
+    }
+
+    closeGracias.addEventListener("click", () => {
+      modalGracias.style.display = "none";
+    });
+
+    btnGracias.addEventListener("click", () => {
+      modalGracias.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+      if (e.target == modalGracias) {
+        modalGracias.style.display = "none";
+      }
+    });
+  });
+</script>
+
   </body>
 </html>

@@ -1,3 +1,7 @@
+/* === FUENTE DIGITAL CONTADOR === */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
 /* === DEFINIR FUENTE === */
 html, body {
   font-family: "gravesend-sans", sans-serif;
@@ -386,9 +390,6 @@ body {
   text-shadow: 0 0 3px #fcee09;
 }
 
-/* === FUENTE DIGITAL CONTADOR === */
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
 .contador-numero {
   font-family: 'Share Tech Mono', monospace;
   font-size: 2.8rem;
@@ -609,4 +610,76 @@ main {
   font-family: "gravesend-sans", sans-serif;
   font-weight: 900;
   font-style: normal;
+}
+/* Modal LDB */
+.modal-ldb {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.modal-ldb-content {
+  background-color: white;
+  margin: 10vh auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  font-family: "gravesend-sans", sans-serif;
+  color: #161443;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-ldb-content h2 {
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.modal-ldb label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.modal-ldb input,
+.modal-ldb textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.modal-ldb button {
+  margin-top: 1.5rem;
+  background-color: #254fa3;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s;
+}
+
+.modal-ldb button:hover {
+  background-color: #1c3f85;
+}
+
+.modal-ldb-close {
+  color: #aaa;
+  float: right;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
 }
