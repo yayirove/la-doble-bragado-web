@@ -74,14 +74,14 @@ const { title = "La Doble Bragado", children } = Astro.props;
   document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modalContact");
     const closeBtn = document.getElementById("modalContactClose");
-    const openBtn = document.querySelector('[data-modal="contact"]');
+    const openBtns = document.querySelectorAll('[data-modal="contact"]');
 
-    if (openBtn) {
-      openBtn.addEventListener("click", function (e) {
+    openBtns.forEach((btn) => {
+      btn.addEventListener("click", function (e) {
         e.preventDefault();
         modal.style.display = "block";
       });
-    }
+    });
 
     closeBtn.addEventListener("click", function () {
       modal.style.display = "none";
@@ -95,6 +95,7 @@ const { title = "La Doble Bragado", children } = Astro.props;
   });
 </script>
 
+
 <script is:inline defer>
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('form[name="contacto"]');
@@ -104,21 +105,24 @@ const { title = "La Doble Bragado", children } = Astro.props;
     const btnGracias = document.getElementById("modalGraciasBtn");
 
     if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+     form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-        // Simula envío exitoso para efecto visual inmediato
-        modalContacto.style.display = "none";
-        modalGracias.style.display = "block";
+  const data = new FormData(form);
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(data).toString(),
+  })
+  .then(() => {
+    modalContacto.style.display = "none";
+    modalGracias.style.display = "block";
+  })
+  .catch(() => {
+    alert("Ocurrió un error al enviar el formulario. Por favor intentá nuevamente.");
+  });
+});
 
-        // Enviamos el formulario con Netlify
-        const data = new FormData(form);
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(data).toString(),
-        });
-      });
     }
 
     closeGracias.addEventListener("click", () => {
