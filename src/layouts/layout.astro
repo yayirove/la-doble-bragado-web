@@ -17,7 +17,6 @@ const { title = "La Doble Bragado", children } = Astro.props;
     <div class="header-logo">
       <img src="/assets/logo-redux-x1.png" alt="La Doble Bragado" />
     </div>
-    
 
     <main>
       <slot />
@@ -26,128 +25,121 @@ const { title = "La Doble Bragado", children } = Astro.props;
     <script src="/js/contador.js" defer></script>
     <script src="/js/parallax-hero.js" defer></script>
     <script src="/js/rellax.min.js" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    new Rellax('.rellax');
-  });
-</script>
-
-
-<!-- Modal Contacto Netlify -->
-<div class="modal-ldb" id="modalContact">
-  <div class="modal-ldb-content">
-    <span class="modal-ldb-close" id="modalContactClose">&times;</span>
-    <h2>¿Querés sumarte?</h2>
-   <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="contacto" />
-  <p hidden>
-    <label>No llenar este campo: <input name="bot-field" /></label>
-  </p>
-
-  <label for="nombre2">Nombre</label>
-  <input type="text" id="nombre2" name="nombre" required />
-
-  <label for="email2">Correo electrónico</label>
-  <input type="email" id="email2" name="email" required />
-
-  <label for="mensaje2">Mensaje (opcional)</label>
-  <textarea id="mensaje2" name="mensaje"></textarea>
-
-  <button type="submit">Enviar</button>
-</form>
-
-
-  </div>
-</div>
-
-<!-- Mensaje de éxito -->
-<div class="modal-ldb" id="modalGracias">
-  <div class="modal-ldb-content">
-    <span class="modal-ldb-close" id="modalGraciasClose">&times;</span>
-    <h2>¡Gracias por escribirnos!</h2>
-    <p>Pronto nos pondremos en contacto con vos.</p>
-    <button id="modalGraciasBtn">Cerrar</button>
-  </div>
-</div>
-
-<!-- Script modal -->
-
-<script is:inline defer>
-  document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("modalContact");
-    const closeBtn = document.getElementById("modalContactClose");
-    const openBtns = document.querySelectorAll('[data-modal="contact"]');
-
-    openBtns.forEach((btn) => {
-      btn.addEventListener("click", function (e) {
-        e.preventDefault();
-        modal.style.display = "block";
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        new Rellax('.rellax');
       });
-    });
+    </script>
 
-    closeBtn.addEventListener("click", function () {
-      modal.style.display = "none";
-    });
+    <!-- Modal Contacto Netlify -->
+    <div class="modal-ldb" id="modalContact">
+      <div class="modal-ldb-content">
+        <span class="modal-ldb-close" id="modalContactClose">&times;</span>
+        <h2>¿Querés sumarte?</h2>
+        <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contacto" />
+          <p style="display:none">
+            <label>No completar si sos humano: <input name="bot-field" /></label>
+          </p>
 
-    window.addEventListener("click", function (e) {
-      if (e.target == modal) {
-        modal.style.display = "none";
-      }
-    });
-  });
-</script>
+          <label for="nombre2">Nombre</label>
+          <input type="text" id="nombre2" name="nombre" required />
 
+          <label for="email2">Correo electrónico</label>
+          <input type="email" id="email2" name="email" required />
 
-<script is:inline defer>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector('form[name="contacto"]');
-    const modalContacto = document.getElementById("modalContact");
-    const modalGracias = document.getElementById("modalGracias");
-    const closeGracias = document.getElementById("modalGraciasClose");
-    const btnGracias = document.getElementById("modalGraciasBtn");
+          <label for="mensaje2">Mensaje (opcional)</label>
+          <textarea id="mensaje2" name="mensaje"></textarea>
 
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
 
-        const data = new FormData(form);
+    <!-- Modal de agradecimiento -->
+    <div class="modal-ldb" id="modalGracias">
+      <div class="modal-ldb-content">
+        <span class="modal-ldb-close" id="modalGraciasClose">&times;</span>
+        <h2>¡Gracias por escribirnos!</h2>
+        <p>Pronto nos pondremos en contacto con vos.</p>
+        <button id="modalGraciasBtn">Cerrar</button>
+      </div>
+    </div>
 
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(data).toString(),
-        })
-        .then((res) => {
-          if (res.ok) {
-            modalContacto.style.display = "none";
-            modalGracias.style.display = "block";
-          } else {
-            alert("Error al enviar el formulario. Intentá de nuevo.");
+    <!-- Script apertura de modal -->
+    <script is:inline defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("modalContact");
+        const closeBtn = document.getElementById("modalContactClose");
+        const openBtns = document.querySelectorAll('[data-modal="contact"]');
+
+        openBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            modal.style.display = "block";
+          });
+        });
+
+        closeBtn.addEventListener("click", function () {
+          modal.style.display = "none";
+        });
+
+        window.addEventListener("click", function (e) {
+          if (e.target == modal) {
+            modal.style.display = "none";
           }
-        })
-        .catch(() => {
-          alert("Ocurrió un error al enviar. Por favor intentá más tarde.");
         });
       });
-    }
+    </script>
 
-    closeGracias.addEventListener("click", () => {
-      modalGracias.style.display = "none";
-    });
+    <!-- Script de envío con confirmación -->
+    <script is:inline defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector('form[name="contacto"]');
+        const modalContacto = document.getElementById("modalContact");
+        const modalGracias = document.getElementById("modalGracias");
+        const closeGracias = document.getElementById("modalGraciasClose");
+        const btnGracias = document.getElementById("modalGraciasBtn");
 
-    btnGracias.addEventListener("click", () => {
-      modalGracias.style.display = "none";
-    });
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-    window.addEventListener("click", function (e) {
-      if (e.target == modalGracias) {
-        modalGracias.style.display = "none";
-      }
-    });
-  });
-</script>
+            const data = new FormData(form);
 
+            fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams(data).toString(),
+            })
+            .then((res) => {
+              if (res.ok) {
+                modalContacto.style.display = "none";
+                modalGracias.style.display = "block";
+              } else {
+                alert("Error al enviar el formulario. Intentá de nuevo.");
+              }
+            })
+            .catch(() => {
+              alert("Ocurrió un error al enviar. Por favor intentá más tarde.");
+            });
+          });
+        }
 
+        closeGracias.addEventListener("click", () => {
+          modalGracias.style.display = "none";
+        });
 
+        btnGracias.addEventListener("click", () => {
+          modalGracias.style.display = "none";
+        });
+
+        window.addEventListener("click", function (e) {
+          if (e.target == modalGracias) {
+            modalGracias.style.display = "none";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
