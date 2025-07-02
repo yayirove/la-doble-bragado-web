@@ -112,6 +112,23 @@ const { title = "La Doble Bragado", children } = Astro.props;
 
         const data = new FormData(form);
 
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(data).toString(),
+        })
+        .then((res) => {
+          if (res.ok) {
+            modalContacto.style.display = "none";
+            modalGracias.style.display = "block";
+          } else {
+            alert("Error al enviar el formulario. Intentá de nuevo.");
+          }
+        })
+        .catch(() => {
+          alert("Ocurrió un error al enviar. Por favor intentá más tarde.");
+        });
+      });
     }
 
     closeGracias.addEventListener("click", () => {
@@ -129,6 +146,7 @@ const { title = "La Doble Bragado", children } = Astro.props;
     });
   });
 </script>
+
 
 
   </body>
