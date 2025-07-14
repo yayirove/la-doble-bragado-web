@@ -9,14 +9,23 @@ const { title = "La Doble Bragado", children } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap">
-    <link rel="stylesheet" href="https://use.typekit.net/dgy8exd.css">
+    <link rel="stylesheet" href="https://use.typekit.net/dgy8exd.css"> <!-- Adobe Fonts -->
   </head>
+
   <body>
 
-    <!-- Logo centrado arriba -->
-    <div class="header-logo">
-      <img src="/assets/logo-redux-x1.png" alt="La Doble Bragado" />
-    </div>
+    <!-- Barra de navegación principal -->
+    <header class="barra-navegacion">
+  <div class="nav-derecha">
+    <a href="/">Inicio</a>
+    <a href="/historia">Historia</a>
+  </div>
+  <div class="nav-izquierda">
+    <a href="/equipos">Equipos</a>
+    <a href="/sponsor">Sponsor</a>
+  </div>
+</header>
+
 
     <main>
       <slot />
@@ -28,6 +37,22 @@ const { title = "La Doble Bragado", children } = Astro.props;
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         new Rellax('.rellax');
+      });
+
+      // ocultar barra al hacer scroll hacia abajo
+      let lastScroll = 0;
+      const nav = document.querySelector('.barra-navegacion');
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll && currentScroll > 60) {
+          nav.style.transform = 'translateY(-100%)';
+        } else {
+          nav.style.transform = 'translateY(0)';
+        }
+
+        lastScroll = currentScroll;
       });
     </script>
 

@@ -3,10 +3,20 @@
 
 
 /* === DEFINIR FUENTE === */
+/* === FUENTE PRINCIPAL (Adobe Fonts) === */
 html, body {
-  font-family: "gravesend-sans", sans-serif;
+  font-family: "gravesend-sans", sans-serif !important;
   font-weight: 300;
   font-style: normal;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: inherit;
 }
 
 /* === HERO NUEVA V5 MINI (SECCIÓN INICIO) === */
@@ -351,7 +361,7 @@ body {
   padding: 1rem 2rem;
   border-radius: 10px;
   color: #fcee09;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Share Tech Mono', monospace !important;
   text-align: center;
 }
 
@@ -364,6 +374,7 @@ body {
 .contador-numero {
   font-size: 2.5rem;
   font-weight: bold;
+  font-family: 'Share Tech Mono', monospace !important;
   line-height: 1;
 }
 
@@ -682,4 +693,291 @@ main {
   font-size: 1.8rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* === ESTILOS GANADORES === */
+.winners {
+  padding: 100px 0;
+  background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #254FA3, #DB5DA2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.winners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.winner-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.winner-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.winner-card:hover::before {
+  left: 100%;
+}
+
+.winner-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(37,79,163,0.2);
+  border-color: rgba(37,79,163,0.3);
+}
+
+.winner-photo {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #254FA3, #DB5DA2);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.winner-category {
+  font-size: 0.9rem;
+  color: #F8E300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.winner-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.winner-achievement {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.winner-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.winner-stat {
+  text-align: center;
+}
+
+.winner-stat-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #F8E300;
+  display: block;
+}
+
+.winner-stat-label {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+/* === ESTILOS VIDEOS DESTACADOS === */
+.videos {
+  padding: 100px 0;
+  background: #0a0a0a;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.video-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(37,79,163,0.2);
+}
+
+.video-thumbnail {
+  height: 200px;
+  background: linear-gradient(135deg, #254FA3, #ab58e7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.video-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.video-info {
+  padding: 20px;
+}
+
+.video-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #F8E300;
+}
+
+.video-description {
+  opacity: 0.8;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.video-stats {
+  display: flex;
+  gap: 15px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.barra-navegacion {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  z-index: 1000;
+  font-family: "gravesend-sans", sans-serif;
+  font-weight: 500;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+
+.barra-navegacion a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 2rem;
+  transition: opacity 0.2s ease;
+}
+
+.nav-izquierda,
+.nav-derecha {
+  display: flex;
+  align-items: center;
+  gap: 4ch;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.nav-logo img {
+  height: 48px;
+  object-fit: contain;
+}
+
+/* === FIX FUENTE DIGITAL SOLO PARA CONTADOR === */
+.contador-box,
+.contador-label,
+.contador-numero,
+.contador-labels,
+.contador-texto-abajo,
+.seccion-contador,
+.seccion-contador h2,
+.flip-number,
+.flip-label {
+  font-family: 'Share Tech Mono', monospace !important;
+}
+
+.logo-hero {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.logo-hero img {
+  height: 200px;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .logo-hero img {
+    height: 200px;
+  }
+}
+
+.hero-content p {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.contador-titulo {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem;
+  color: #fcee09;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bloque-contador {
+  margin-top: 8rem; /* podés aumentar este valor si querés bajarlo más */
+}
+
+.contador-titulo {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem;
+  color: #fcee09;
+  text-align: center;
+  margin-bottom: 1rem;
 }

@@ -1,141 +1,131 @@
-5---
-// src/pages/index.astro
-import Layout from '../layouts/layout.astro';
-import '../styles/global.css';
+---
+import Layout from "../layouts/layout.astro";
+const { title = "La Doble Bragado" } = Astro.props;
 ---
 
-<Layout>
-  <section id="hero" class="hero-nueva">
-  <div class="hero-bg rellax" data-rellax-speed="-3"></div>
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <h1>Unite a nuestro canal de YouTube con tu marca</h1>
-      <p>Juntos romperemos con el status quo</p>
-      <a href="#" class="cta-button" data-modal="contact">¿Te gusta la idea?</a>
+<Layout title={title}>
+  <section class="hero-nueva">
+    <div class="hero-bg rellax" data-rellax-speed="-2"></div>
+    <div class="hero-overlay">
+      <div class="logo-hero">
+        <img src="/assets/logo-redux-x1.png" alt="Logo LDB" />
+      </div>
+      <div class="hero-content">
+        <p>Historia y pasión • Ciclismo de alto nivel • Comunidad y familia</p>
+        <div class="bloque-contador">
+          <p class="contador-titulo">Falta para la Doble Bragado Femenina</p>
+      <div class="flip-container"> 
+          <div class="flip-block" id="dias">
+            <div class="flip-inner"><span class="flip-number">00</span></div>
+            <div class="flip-label">DÍAS</div>
+          </div>
+          <div class="flip-block" id="horas">
+            <div class="flip-inner"><span class="flip-number">00</span></div>
+            <div class="flip-label">HORAS</div>
+          </div>
+          <div class="flip-block" id="minutos">
+            <div class="flip-inner"><span class="flip-number">00</span></div>
+            <div class="flip-label">MIN</div>
+          </div>
+          <div class="flip-block" id="segundos">
+            <div class="flip-inner"><span class="flip-number">00</span></div>
+            <div class="flip-label">SEG</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <section id="about" class="acerca">
-  <div class="acerca-content">
-    <h2>¿Qué es La Doble Bragado?</h2>
-    <p>
-      Somos más que una carrera, la Doble Bragado es historia y pasión: ciclismo de alto nivel, cobertura audiovisual y una comunidad apasionada que no se detiene.
-    </p>
-    <div class="acerca-metricas">
-      <div class="acerca-box">
-        <strong>+110K</strong>
-        <span>Vistas en YouTube</span>
-      </div>
-      <div class="acerca-box">
-        <strong>+3K</strong>
-        <span>Seguidores en Instagram</span>
-      </div>
-      <div class="acerca-box">
-        <strong>LatAm</strong>
-        <span>Audiencia 100% en español</span>
+  <section class="winners">
+    <div class="container">
+      <h2 class="section-title">Ganadores</h2>
+      <div class="winners-grid">
+        <div class="winner-card">
+          <div class="winner-photo">♀</div>
+          <div class="winner-category">Categoría Femenina</div>
+          <h3 class="winner-name">Ganadora 2024</h3>
+          <p class="winner-achievement">Campeona de la Doble Bragado</p>
+          <div class="winner-stats">
+            <div class="winner-stat">
+              <span class="winner-stat-number">1°</span>
+              <span class="winner-stat-label">Posición</span>
+            </div>
+            <div class="winner-stat">
+              <span class="winner-stat-number">2024</span>
+              <span class="winner-stat-label">Año</span>
+            </div>
+          </div>
+        </div>
+        <div class="winner-card">
+          <div class="winner-photo">♂</div>
+          <div class="winner-category">Categoría Masculina</div>
+          <h3 class="winner-name">Ganador 2024</h3>
+          <p class="winner-achievement">Campeón de la Doble Bragado</p>
+          <div class="winner-stats">
+            <div class="winner-stat">
+              <span class="winner-stat-number">1°</span>
+              <span class="winner-stat-label">Posición</span>
+            </div>
+            <div class="winner-stat">
+              <span class="winner-stat-number">2024</span>
+              <span class="winner-stat-label">Año</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="why" class="porque">
-  <div class="porque-content">
-    <h2>¿Por qué romper el status quo?</h2>
-    <div class="porque-grid">
-      <div class="porque-item">
-        <span class="icon">💡</span>
-        <h3>Innovación</h3>
-        <p>Somos la única cobertura independiente de ciclismo en vivo y con espíritu de familia y comunidad.</p>
+  <section class="videos">
+    <div class="container">
+      <h2 class="section-title">Videos Destacados</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail" onclick="window.open('https://youtube.com/dummy-link-1', '_blank')">
+            🎬
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Resumen Etapa Final</h3>
+            <p class="video-description">Los momentos más emocionantes de la etapa decisiva de la Doble Bragado 2024.</p>
+            <div class="video-stats">
+              <span>25K vistas</span>
+              <span>Hace 2 meses</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail" onclick="window.open('https://youtube.com/dummy-link-2', '_blank')">
+            🎬
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Entrevista Ganadores</h3>
+            <p class="video-description">Entrevista exclusiva con los campeones de la edición 2024.</p>
+            <div class="video-stats">
+              <span>15K vistas</span>
+              <span>Hace 1 mes</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail" onclick="window.open('https://youtube.com/dummy-link-3', '_blank')">
+            🎬
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Transmisión en Vivo</h3>
+            <p class="video-description">Revive la transmisión completa de la carrera más épica del año.</p>
+            <div class="video-stats">
+              <span>50K vistas</span>
+              <span>Hace 3 meses</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="porque-item">
-        <span class="icon">🔥</span>
-        <h3>Cobertura épica</h3>
-        <p>Transmitimos en vivo por YouTube todas las etapas con resúmenes diarios, highlights, entrevistas y presencia en redes pre, durante y post evento.</p>
-      </div>
-      <div class="porque-item">
-        <span class="icon">📊</span>
-        <h3>Impacto real</h3>
-        <p>Tu marca llega a una audiencia fiel, segmentada y altamente activa, con métricas concretas en tiempo real.</p>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="sponsors" class="sponsors">
-  <div class="sponsors-content">
-    <h2>Marcas que nos acompañan</h2>
-    <div class="sponsors-logos">
-      <img src="/assets/sponsors/sponsor1.png" alt="Sponsor 1">
-      <img src="/assets/sponsors/sponsor2.png" alt="Sponsor 2">
-      <img src="/assets/sponsors/sponsor3.png" alt="Sponsor 3">
-      <img src="/assets/sponsors/sponsor4.png" alt="Sponsor 4">
-      <!-- Podés duplicar o reemplazar según tus aliados reales -->
-    </div>
-  </div>
-</section>
-
-<section class="seccion-contador">
-  <h2 class="gravesend">FALTAN</h2>
-  <div class="flip-container">
-    <div class="flip-block">
-      <div class="flip-inner" id="dias"><div class="flip-number">00</div></div>
-      <div class="flip-label">DÍAS</div>
-    </div>
-    <div class="flip-block">
-      <div class="flip-inner" id="horas"><div class="flip-number">00</div></div>
-      <div class="flip-label">HORAS</div>
-    </div>
-    <div class="flip-block">
-      <div class="flip-inner" id="minutos"><div class="flip-number">00</div></div>
-      <div class="flip-label">MINUTOS</div>
-    </div>
-    <div class="flip-block">
-      <div class="flip-inner" id="segundos"><div class="flip-number">00</div></div>
-      <div class="flip-label">SEGUNDOS</div>
-    </div>
-  </div>
-  <p class="contador-final acumind pro">para la 3era edición femenina de la Doble Bragado</p>
-</section>
-
-<section id="contacto" class="contacto">
-  <div class="contacto-content">
+  <section class="contacto">
     <h2>¿Listo para romper esquemas?</h2>
     <p>Escribinos y descubrí cómo tu marca puede ser parte de nuestra transmisión y de una nueva forma de vivir el ciclismo.</p>
-    <div class="cta-links">
-      <a href="#" class="cta-mail" data-modal="contact">Contactanos</a>
-      <a href="/media-kit.pdf" target="_blank" class="cta-pdf">Descargar Media Kit</a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <p>&copy; 2025 EL MARIACHI</p>
-  <div class="redes">
-  <a href="https://youtube.com/@ladoblebragado" target="_blank" aria-label="YouTube">
-    <img src="/assets/icons/youtube-black.svg" alt="YouTube">
-  </a>
-  <a href="https://www.instagram.com/la_doble_bragado_arg" target="_blank" aria-label="Instagram">
-    <img src="/assets/icons/instagram-black.svg" alt="Instagram">
-  </a>
-</div>
-
-</footer>
-
-<div hidden>
-  <form name="contacto" method="POST" data-netlify="true" netlify netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contacto" />
-    <p style="display:none">
-      <label>No completar si sos humano: <input name="bot-field" /></label>
-    </p>
-    <input type="text" name="nombre" />
-    <input type="email" name="email" />
-    <textarea name="mensaje"></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-</div>
-
-
-
+    <a href="#" class="cta-button" data-modal="ldb">Contactanos ahora</a>
+  </section>
 </Layout>
-
