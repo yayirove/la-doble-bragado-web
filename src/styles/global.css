@@ -545,15 +545,17 @@ main {
 
 
 .hero-overlay {
-  position: relative;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 .hero-content {
@@ -874,41 +876,13 @@ main {
   opacity: 0.6;
 }
 
-.barra-navegacion {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 3rem;
-  z-index: 1000;
-  font-family: "gravesend-sans", sans-serif;
-  font-weight: 500;
-}
+
 
 main {
   margin: 0;
   padding: 0;
 }
 
-
-.barra-navegacion a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  margin: 0 2rem;
-  transition: opacity 0.2s ease;
-}
-
-.nav-izquierda,
-.nav-derecha {
-  display: flex;
-  align-items: center;
-  gap: 4ch;
-}
 
 .nav-logo {
   display: flex;
@@ -958,7 +932,7 @@ main {
 
 .hero-content p {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .contador-titulo {
@@ -981,3 +955,181 @@ main {
   text-align: center;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    padding: 0 1.5rem;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+
+ .flip-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap; /* 🔁 CAMBIAR de wrap a nowrap */
+  margin-top: 1.5rem;
+}
+
+  .flip-block {
+    width: 70px;
+    height: 90px;
+  }
+
+  .flip-number {
+    font-size: 2rem;
+  }
+
+  .flip-label {
+    font-size: 0.7rem;
+  }
+
+  .flip-inner {
+  width: 60px;
+  height: 80px;
+  font-size: 2.2rem;
+}
+
+  .contador-texto-superior {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-inner {
+    width: 50px;
+    height: 65px;
+    font-size: 1.6rem;
+  }
+
+  .flip-label {
+    font-size: 0.65rem;
+  }
+
+   .flip-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap; /* 🔁 CAMBIAR de wrap a nowrap */
+  margin-top: 1.5rem;
+}
+}
+
+@media (max-width: 768px) {
+  .hero-nueva {
+    background-position: center top;
+    height: 90vh;
+    padding: 2rem 1rem;
+  }
+
+ .hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    margin-top: -40px; /* Ajustá este valor a gusto */
+  }
+}
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+    .header-logo {
+    top: 20px;
+  }
+
+  .header-logo img {
+    height: 90px;
+  }
+}
+
+/* === Ajuste de posición del texto principal en móviles === */
+@media (max-width: 768px) {
+  .hero-overlay {
+    align-items: flex-start;
+    padding-top: 200px;
+  }
+
+  .hero-content {
+    margin-top: 0;
+  }
+}
+
+
+/* === CONTROL MANUAL DE POSICIÓN Y TAMAÑO DEL TEXTO HERO === */
+
+.hero-content h1 {
+  font-size: 2.2rem; /* valor por defecto móvil */
+  font-weight: 800;
+  margin-bottom: 1rem;
+  transition: margin 0.3s ease, font-size 0.3s ease;
+}
+
+/* Tamaños ajustables */
+.texto-xl { font-size: 2.8rem !important; }
+.texto-lg { font-size: 1.5rem !important; }
+.texto-md { font-size: 2rem !important; }
+
+/* Posición ajustable */
+.sube-texto { margin-top: -10px !important; }
+.baja-texto { margin-top: 100px !important; }
+
+@media (min-width: 769px) {
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-top: 0;
+  }
+}
+
+/* === CONTROL MANUAL DE TEXTO HERO SEPARADO === */
+
+/* Título principal */
+.hero-content p {
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  margin-bottom: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 1rem;
+}
+
+.texto-xl { font-size: 2.8rem !important; }
+.texto-lg { font-size: 1.8rem !important; }
+.texto-md { font-size: 1.8rem !important; }
+.sube-titulo { margin-top: -40px !important; }
+.baja-titulo { margin-top: 40px !important; }
+
+/* Subtítulo + botón */
+.hero-subcontenido {
+  transition: margin 0.3s ease;
+}
+.sube-sub { margin-top: -40px !important; }
+.baja-sub { margin-top: 100px !important; }
+
+@media (min-width: 769px) {
+  .hero-content h1 {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+}
+
