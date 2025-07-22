@@ -1,0 +1,248 @@
+/* === HERO SECTION === */
+.hero-nueva {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+  background-image: url('/assets/hero-nuevo-3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  transition: margin 0.3s ease, font-size 0.3s ease;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* === CONTROL MANUAL TEXTO HERO === */
+.texto-xl { font-size: 2.8rem !important; }
+.texto-lg { font-size: 1.8rem !important; }
+.texto-md { font-size: 1.8rem !important; }
+
+.sube-texto { margin-top: -10px !important; }
+.baja-texto { margin-top: 100px !important; }
+
+.sube-titulo { margin-top: -40px !important; }
+.baja-titulo { margin-top: 40px !important; }
+
+.sube-sub { margin-top: -40px !important; }
+.baja-sub { margin-top: 100px !important; }
+
+/* === LOGO HEADER === */
+.header-logo,
+.logo-hero {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.logo-hero img,
+.header-logo img {
+  height: 200px;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: height 0.3s ease;
+}
+
+/* === FOOTER === */
+.footer {
+  background: var(--color-light);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  border-top: 1px solid #ccc;
+}
+
+.footer .redes {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer .redes a img {
+  height: 28px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer .redes a:hover img {
+  opacity: 1;
+}
+
+.acerca {
+  padding: 4rem 0 2rem 0;
+  background: var(--color-bg);
+  color: var(--color-white);
+}
+.acerca-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.acerca-content h2 {
+  font-family: var(--font-dazzle);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+  letter-spacing: 2px;
+}
+.acerca-metricas {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.acerca-box {
+  background: rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.acerca-box strong {
+  color: var(--color-secondary);
+  font-size: 2rem;
+}
+
+.porque {
+  padding: 4rem 0 2rem 0;
+  background: var(--color-primary);
+  color: var(--color-light);
+}
+.porque-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.porque-content h2 {
+  font-family: var(--font-dazzle);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--color-secondary);
+  letter-spacing: 2px;
+}
+.porque-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.porque-item {
+  background: rgba(0,0,0,0.11);
+  border-radius: 10px;
+  padding: 2rem 2rem 1.5rem 2rem;
+  min-width: 250px;
+  max-width: 300px;
+  flex: 1 1 260px;
+}
+.porque-item .icon {
+  font-size: 2.6rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.porque-item h3 {
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.porque-item p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.sponsors {
+  padding: 4rem 0 2rem 0;
+  background: var(--color-light);
+  color: #1c1c1c;
+}
+.sponsors-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.sponsors-content h2 {
+  font-family: var(--font-dazzle);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+.sponsors-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.sponsors-logos img {
+  height: 54px;
+  width: auto;
+  filter: grayscale(60%);
+  opacity: 0.8;
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+}
+.sponsors-logos img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.09);
+}
