@@ -1,0 +1,74 @@
+/* === RESPONSIVE HERO / TEXTOS === */
+@media (max-width: 768px) {
+  .hero-nueva {
+    background-position: center top;
+    height: 90vh;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-top: -40px;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .header-logo {
+    top: 30px;
+  }
+
+  .header-logo img,
+  .logo-hero img {
+    height: 120px;
+  }
+
+  .hero-overlay {
+    align-items: flex-start;
+    padding-top: 200px;
+  }
+}
+
+/* === CONTADOR / FLIP CLOCK RESPONSIVE === */
+@media (max-width: 768px) {
+  .flip-container {
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .flip-block {
+    width: 70px;
+    height: 90px;
+  }
+
+  .flip-inner {
+    width: 60px;
+    height: 80px;
+  }
+
+  .flip-number {
+    font-size: 2rem;
+  }
+
+  .flip-label {
+    font-size: 0.7rem;
+  }
+
+  .contador-texto-superior {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-inner {
+    width

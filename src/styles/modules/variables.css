@@ -1,0 +1,23 @@
+:root {
+  /* === COLORES === */
+  --color-primary: #254FA3;     /* Celeste oscuro */
+  --color-secondary: #F8E300;   /* Amarillo */
+  --color-accent: #DB5DA2;      /* Rosa */
+  --color-bg: #161443;          /* Fondo principal */
+  --color-light: #F1F2F2;       /* Gris claro */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* === TIPOGRAFÍAS === */
+  --font-gravesend: "gravesend-sans", sans-serif;
+  --font-dazzle: "dazzle-unicase", sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+
+  /* === ESPACIADO Y TAMAÑOS === */
+  --max-width: 1200px;
+  --spacing: 1.5rem;
+  --radius: 1rem;
+
+  /* === TRANSICIÓN GLOBAL === */
+  --transition: all 0.3s ease;
+}

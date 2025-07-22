@@ -1,0 +1,57 @@
+/* === KEYFRAMES === */
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+  50% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+/* === TRANSICIONES COMUNES === */
+
+.btn,
+.cta-button,
+.card,
+.winner-card,
+.video-card,
+.sponsor-card,
+.hero-content h1,
+.hero-content p,
+img,
+.logo-hero img {
+  transition: var(--transition);
+}
+
+/* === EFECTOS DE HOVER === */
+
+.card:hover,
+.video-card:hover,
+.winner-card:hover,
+.sponsor-card:hover {
+  transform: translateY(-5px);
+}
+
+.winner-card:hover {
+  box-shadow: 0 30px 60px rgba(37, 79, 163, 0.2);
+  border-color: rgba(37, 79, 163, 0.3);
+}
+
+.video-card:hover {
+  box-shadow: 0 20px 40px rgba(37, 79, 163, 0.2);
+}
+
+.sponsors-logos img {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.sponsors-logos img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}

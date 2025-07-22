@@ -1,0 +1,124 @@
+/* === HERO SECTION === */
+.hero-nueva {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+  background-image: url('/assets/hero-nuevo-3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  transition: margin 0.3s ease, font-size 0.3s ease;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* === CONTROL MANUAL TEXTO HERO === */
+.texto-xl { font-size: 2.8rem !important; }
+.texto-lg { font-size: 1.8rem !important; }
+.texto-md { font-size: 1.8rem !important; }
+
+.sube-texto { margin-top: -10px !important; }
+.baja-texto { margin-top: 100px !important; }
+
+.sube-titulo { margin-top: -40px !important; }
+.baja-titulo { margin-top: 40px !important; }
+
+.sube-sub { margin-top: -40px !important; }
+.baja-sub { margin-top: 100px !important; }
+
+/* === LOGO HEADER === */
+.header-logo,
+.logo-hero {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.logo-hero img,
+.header-logo img {
+  height: 200px;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: height 0.3s ease;
+}
+
+/* === FOOTER === */
+.footer {
+  background: var(--color-light);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  border-top: 1px solid #ccc;
+}
+
+.footer .redes {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer .redes a img {
+  height: 28px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer .redes a:hover img {
+  opacity: 1;
+}

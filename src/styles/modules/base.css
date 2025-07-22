@@ -1,0 +1,69 @@
+/* === CONTAINER GENERAL === */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* === BOTONES GENÉRICOS === */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background: var(--color-secondary);
+  color: var(--color-black);
+}
+
+.btn-primary:hover {
+  background: #ffe600;
+}
+
+/* === TARJETAS / BLOQUES === */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* === TIPOGRAFÍA BASE === */
+.font-light {
+  font-weight: 300;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.titulo-seccion {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.texto-parrafo {
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.6;
+}

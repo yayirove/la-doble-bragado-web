@@ -1,0 +1,195 @@
+/* === CONTADOR HERO === */
+.contador-hero {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  text-align: right;
+}
+
+.contador-box {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.contador-label,
+.contador-numero,
+.contador-labels,
+.contador-texto-abajo {
+  font-family: var(--font-mono) !important;
+  color: var(--color-secondary);
+  text-shadow: 0 0 6px var(--color-secondary);
+}
+
+.contador-numero {
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.contador-labels {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+}
+
+.contador-titulo {
+  font-size: 1rem;
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+/* === CONTADOR FINAL / SECCIÓN === */
+.seccion-contador {
+  position: relative;
+  background-image: url('/assets/contador/Doble-Bragado-Fem-Etapa-reina-16-9-v4.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  color: var(--color-secondary);
+  z-index: 1;
+}
+
+.seccion-contador::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.seccion-contador h2 {
+  font-family: var(--font-gravesend);
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 10px;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.flip-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.flip-block {
+  perspective: 1000px;
+}
+
+.flip-inner {
+  width: 80px;
+  height: 100px;
+  background: linear-gradient(to bottom, #682c7d, #3d154a);
+  border-radius: 8px;
+  box-shadow: inset 0 -1px 0 #000, 0 3px 8px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.flip-inner.flipping {
+  animation: flip 0.6s ease forwards;
+}
+
+@keyframes flip {
+  0% { transform: rotateX(0); }
+  50% { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0); }
+}
+
+.flip-number {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-shadow: 0 0 3px #a949c7, 0 0 6px #ee69a1;
+}
+
+.flip-label {
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* === MODAL LDB === */
+.modal-ldb {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.modal-ldb-content {
+  background-color: white;
+  margin: 10vh auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  font-family: var(--font-gravesend);
+  color: var(--color-bg);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-ldb-content h2 {
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.modal-ldb label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.modal-ldb input,
+.modal-ldb textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.modal-ldb button {
+  margin-top: 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s;
+}
+
+.modal-ldb button:hover {
+  background-color: #1c3f85;
+}
+
+.modal-ldb-close {
+  color: #aaa;
+  float: right;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
