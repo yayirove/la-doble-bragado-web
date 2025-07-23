@@ -6,10 +6,18 @@ const { title = "La Doble Bragado", children } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/global.css">
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="/styles/global.css" />
     <title>{title}</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap">
-    <link rel="stylesheet" href="https://use.typekit.net/dgy8exd.css"> <!-- Adobe Fonts -->
+    <!-- Tipografías -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.typekit.net/dgy8exd.css"
+    />
   </head>
 
   <body>
@@ -17,50 +25,67 @@ const { title = "La Doble Bragado", children } = Astro.props;
       <slot />
     </main>
 
+    <!-- Scripts de funcionalidad general -->
     <script src="/js/contador.js" defer></script>
     <script src="/js/parallax-hero.js" defer></script>
     <script src="/js/rellax.min.js" defer></script>
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        new Rellax('.rellax');
+      document.addEventListener("DOMContentLoaded", () => {
+        new Rellax(".rellax");
       });
 
-      // ocultar barra al hacer scroll hacia abajo
-      let lastScroll = 0;
-      const nav = document.querySelector('.barra-navegacion');
-
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > lastScroll && currentScroll > 60) {
-          nav.style.transform = 'translateY(-100%)';
-        } else {
-          nav.style.transform = 'translateY(0)';
-        }
-
-        lastScroll = currentScroll;
-      });
+      // Si tienes una barra con clase .barra-navegacion, la ocultamos al hacer scroll.
+      const nav = document.querySelector(".barra-navegacion");
+      if (nav) {
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+          const currentScroll = window.pageYOffset;
+          if (currentScroll > lastScroll && currentScroll > 60) {
+            nav.style.transform = "translateY(-100%)";
+          } else {
+            nav.style.transform = "translateY(0)";
+          }
+          lastScroll = currentScroll;
+        });
+      }
     </script>
 
-    <!-- Modal Contacto Netlify -->
-    <div class="modal-ldb" id="modalContact">
+    <!-- Modal de contacto principal (coincide con modal-ldb.js) -->
+    <div id="modalLDB" class="modal-ldb">
       <div class="modal-ldb-content">
-        <span class="modal-ldb-close" id="modalContactClose">&times;</span>
-        <h2>¿Querés sumarte?</h2>
-        <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contacto" />
-          <p style="display:none">
-            <label>No completar si sos humano: <input name="bot-field" /></label>
+        <span
+          id="modalLDBClose"
+          class="modal-ldb-close"
+          aria-label="Cerrar"
+          >&times;</span
+        >
+        <h2>Contáctanos</h2>
+        <form
+          name="modal-contacto"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="modal-contacto" />
+          <p style="display: none;">
+            <label
+              >No completar si sos humano: <input name="bot-field" /></label
+            >
           </p>
 
-          <label for="nombre2">Nombre</label>
-          <input type="text" id="nombre2" name="nombre" required />
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" required />
 
-          <label for="email2">Correo electrónico</label>
-          <input type="email" id="email2" name="email" required />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
 
-          <label for="mensaje2">Mensaje (opcional)</label>
-          <textarea id="mensaje2" name="mensaje"></textarea>
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            name="mensaje"
+            id="mensaje"
+            rows="5"
+            required
+          ></textarea>
 
           <button type="submit">Enviar</button>
         </form>
@@ -70,87 +95,19 @@ const { title = "La Doble Bragado", children } = Astro.props;
     <!-- Modal de agradecimiento -->
     <div class="modal-ldb" id="modalGracias">
       <div class="modal-ldb-content">
-        <span class="modal-ldb-close" id="modalGraciasClose">&times;</span>
+        <span
+          class="modal-ldb-close"
+          id="modalGraciasClose"
+          aria-label="Cerrar"
+          >&times;</span
+        >
         <h2>¡Gracias por escribirnos!</h2>
         <p>Pronto nos pondremos en contacto con vos.</p>
         <button id="modalGraciasBtn">Cerrar</button>
       </div>
     </div>
 
-    <!-- Script apertura de modal -->
-    <script is:inline defer>
-      document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("modalContact");
-        const closeBtn = document.getElementById("modalContactClose");
-        const openBtns = document.querySelectorAll('[data-modal="contact"]');
-
-        openBtns.forEach((btn) => {
-          btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            modal.style.display = "block";
-          });
-        });
-
-        closeBtn.addEventListener("click", function () {
-          modal.style.display = "none";
-        });
-
-        window.addEventListener("click", function (e) {
-          if (e.target == modal) {
-            modal.style.display = "none";
-          }
-        });
-      });
-    </script>
-
-    <!-- Script de envío con confirmación -->
-    <script is:inline defer>
-      document.addEventListener("DOMContentLoaded", function () {
-        const form = document.querySelector('form[name="contacto"]');
-        const modalContacto = document.getElementById("modalContact");
-        const modalGracias = document.getElementById("modalGracias");
-        const closeGracias = document.getElementById("modalGraciasClose");
-        const btnGracias = document.getElementById("modalGraciasBtn");
-
-        if (form) {
-          form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const data = new FormData(form);
-
-            fetch("/", {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: new URLSearchParams(data).toString(),
-            })
-            .then((res) => {
-              if (res.ok) {
-                modalContacto.style.display = "none";
-                modalGracias.style.display = "block";
-              } else {
-                alert("Error al enviar el formulario. Intentá de nuevo.");
-              }
-            })
-            .catch(() => {
-              alert("Ocurrió un error al enviar. Por favor intentá más tarde.");
-            });
-          });
-        }
-
-        closeGracias.addEventListener("click", () => {
-          modalGracias.style.display = "none";
-        });
-
-        btnGracias.addEventListener("click", () => {
-          modalGracias.style.display = "none";
-        });
-
-        window.addEventListener("click", function (e) {
-          if (e.target == modalGracias) {
-            modalGracias.style.display = "none";
-          }
-        });
-      });
-    </script>
+    <!-- Script que abre/cierra el modal principal -->
+    <script src="/js/modal-ldb.js" defer></script>
   </body>
 </html>

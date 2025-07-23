@@ -1,11 +1,8 @@
-📁 styles
-  ├── global.css
-  └── modules/
-       ├── variables.css
-       ├── reset.css
-       ├── base.css
-       ├── layout.css
-       ├── components.css
-       ├── responsive.css
-       └── animations.css
-      });
+/* public/styles/global.css */
+@import "./modules/variables.css";
+@import "./modules/reset.css";
+@import "./modules/base.css";
+@import "./modules/layout.css";
+@import "./modules/components.css";
+@import "./modules/animations.css";
+@import "./modules/responsive.css";
