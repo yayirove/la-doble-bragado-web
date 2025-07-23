@@ -178,6 +178,8 @@
   resize: vertical;
   transition: border 0.2s;
   text-transform: none !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
 }
 .modal-ldb input:focus,
 .modal-ldb textarea:focus {
