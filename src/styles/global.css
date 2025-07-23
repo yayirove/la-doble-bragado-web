@@ -6,3 +6,11 @@
 @import "./modules/components.css";
 @import "./modules/animations.css";
 @import "./modules/responsive.css";
+
+/* Al final de tu global.css */
+input[type="text"],
+input[type="email"],
+textarea {
+  /* Deshabilita cualquier transformación automática */
+  text-transform: none !important;
+}
