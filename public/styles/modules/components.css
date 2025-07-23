@@ -215,3 +215,121 @@
 .modal-ldb-close:hover {
   color: var(--color-accent);
 }
+
+/* === SECCIÓN CONTACTO === */
+.contacto {
+  padding: 4rem 0 2rem 0;
+  background: var(--color-bg);
+  color: var(--color-white);
+}
+
+.contacto-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.contacto-content h2 {
+  font-family: var(--font-dazzle);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+  letter-spacing: 2px;
+}
+
+.contacto-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--color-light);
+}
+
+.cta-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-button,
+.cta-mail,
+.cta-pdf {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.cta-button,
+.cta-mail {
+  background: var(--color-secondary);
+  color: var(--color-bg);
+  border: 2px solid var(--color-secondary);
+}
+
+.cta-button:hover,
+.cta-mail:hover {
+  background: transparent;
+  color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(248, 227, 0, 0.3);
+}
+
+.cta-pdf {
+  background: transparent;
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+}
+
+.cta-pdf:hover {
+  background: var(--color-secondary);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(248, 227, 0, 0.3);
+}
+
+
+/* === RESPONSIVE CONTACTO === */
+@media (max-width: 768px) {
+  .contacto-content {
+    padding: 0 1rem;
+  }
+  
+  .contacto-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cta-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cta-button,
+  .cta-mail,
+  .cta-pdf {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-ldb-content {
+    margin: 5vh auto;
+    padding: 2rem 1.5rem;
+    width: 96%;
+  }
+  
+  .modal-ldb-content h2 {
+    font-size: 1.3rem;
+  }
+}

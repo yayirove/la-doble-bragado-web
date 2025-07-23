@@ -150,28 +150,4 @@ import Layout from '../layouts/layout.astro';
       <button type="submit">Enviar</button>
     </form>
   </div>
-
-<!-- Modal de contacto -->
-<div id="modalLDB" class="modal-ldb">
-  <div class="modal-ldb-content">
-    <span id="modalLDBClose" class="modal-ldb-close" aria-label="Cerrar">&times;</span>
-    <h2>Contactanos</h2>
-    <form name="modal-contacto" method="POST" data-netlify="true" netlify netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="modal-contacto" />
-      <p style="display:none">
-        <label>No completar si sos humano: <input name="bot-field" /></label>
-      </p>
-      <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" id="nombre" required />
-
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required />
-
-      <label for="mensaje">Mensaje</label>
-      <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-</div>
 </Layout>
