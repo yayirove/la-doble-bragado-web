@@ -84,7 +84,8 @@
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100;
+  z-index: 1000 !important; /* Aumentar más */
+  pointer-events: none; /* Evitar interferencias */
 }
 
 .logo-hero img,
@@ -93,6 +94,15 @@
   object-fit: contain;
   opacity: 0.95;
   transition: height 0.3s ease;
+}
+
+/* === FIX EDGE === */
+@supports (-ms-ime-align: auto) {
+  .header-logo,
+  .logo-hero {
+    z-index: 9999 !important;
+    position: fixed !important;
+  }
 }
 
 /* === RESPONSIVE LOGO MEJORADO === */
