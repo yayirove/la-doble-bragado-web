@@ -5,6 +5,3 @@
 @import url('./modules/components.css');
 @import url('./modules/responsive.css');
 @import url('./modules/animations.css');
-
-
-body { border: 8px solid red !important; }
