@@ -5,3 +5,11 @@
 @import url('./modules/components.css');
 @import url('./modules/responsive.css');
 @import url('./modules/animations.css');
+
+/* Al final de tu global.css */
+input[type="text"],
+input[type="email"],
+textarea {
+  /* Deshabilita cualquier transformación automática */
+  text-transform: none !important;
+}

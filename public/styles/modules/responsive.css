@@ -72,3 +72,102 @@
 @media (max-width: 480px) {
   .flip-inner {
     width
+
+
+  /* AGREGAR AL FINAL DE responsive.css */
+
+/* === CORREGIR RESPONSIVE.CSS (está cortado) === */
+@media (max-width: 480px) {
+  .flip-inner {
+    width: 50px;
+    height: 70px;
+  }
+  
+  .flip-number {
+    font-size: 1.5rem;
+  }
+  
+  .seccion-contador h2 {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+  }
+}
+
+/* === RESPONSIVE PARA ACERCA === */
+@media (max-width: 768px) {
+  .acerca-metricas {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .acerca-box {
+    padding: 1rem 1.5rem;
+  }
+  
+  .acerca-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* === RESPONSIVE PARA PORQUE === */
+@media (max-width: 768px) {
+  .porque-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .porque-item {
+    max-width: 400px;
+  }
+  
+  .porque-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* === RESPONSIVE PARA SPONSORS === */
+@media (max-width: 768px) {
+  .sponsors-logos {
+    gap: 1.5rem;
+  }
+  
+  .sponsors-logos img {
+    height: 40px;
+  }
+  
+  .sponsors-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsors-logos {
+    gap: 1rem;
+  }
+  
+  .sponsors-logos img {
+    height: 32px;
+  }
+}
+
+/* === RESPONSIVE GENERAL === */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  section {
+    padding: 3rem 0 1.5rem 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 2rem 0 1rem 0 !important;
+  }
+  
+  .modal-ldb-content {
+    width: 98%;
+    margin: 2vh auto;
+  }
+}
