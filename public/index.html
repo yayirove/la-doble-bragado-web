@@ -1,20 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>La Doble Bragado – Próximamente</title>
-  <style>
-    body {margin:0;display:flex;align-items:center;justify-content:center;height:100vh;background:#fff;}
-    img {max-width:200px;}
-    h1 {font-family:sans-serif;color:#333;margin-top:1rem;font-size:2rem;}
-    .wrapper {text-align:center;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Doble Bragado - Próximamente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #161443 0%, #254FA3 100%);
+            color: #F1F2F2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Elementos decorativos sutiles */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 70%, rgba(248, 227, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(219, 93, 162, 0.08) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-20px, -20px) rotate(1deg); }
+            66% { transform: translate(20px, 10px) rotate(-1deg); }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .logo {
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #F8E300, #DB5DA2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 600;
+            color: #F1F2F2;
+            opacity: 0.9;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .coming-soon {
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .coming-soon h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #F1F2F2;
+        }
+
+        .description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.6;
+            opacity: 0.8;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .accent {
+            color: #F8E300;
+            font-weight: 600;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .logo {
+                margin-bottom: 2rem;
+            }
+            
+            .coming-soon {
+                margin-top: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="wrapper">
-        <img src="/assets/logo-redux-x1.png" alt="La Doble Bragado"/>
-    <h1>PRÓXIMAMENTE</h1>
-  </div>
+    <div class="container">
+        <div class="logo">
+            <h1>LA DOBLE<br>BRAGADO</h1>
+        </div>
+        
+        <div class="coming-soon">
+            <h2>Próximamente</h2>
+            <p class="description">
+                Estamos preparando algo <span class="accent">especial</span> para nuestra comunidad. 
+                Una nueva experiencia digital que conectará a todos los que viven la pasión del ciclismo.
+            </p>
+        </div>
+    </div>
 </body>
 </html>
